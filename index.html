@@ -119,6 +119,61 @@
       transition: width 1s ease-in-out;
     }
 
+    /* ====== DETAIL PROYEK ====== */
+.detail-proyek {
+  background: #ffffff;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.detail-proyek h2 {
+  color: #0056b3;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+  font-size: 15px;
+}
+
+
+/* ====== GALERI ====== */
+.galeri-proyek {
+  background: #ffffff;
+  text-align: center;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.galeri-proyek h2 {
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.galeri-link {
+  display: inline-block;
+  background-color: #0078ff;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.galeri-link:hover {
+  background-color: #005ec4;
+}
+
+
     footer {
       text-align: center;
       background: var(--primary);
@@ -140,8 +195,8 @@
 
 <body>
   <header>
-    <h1>PEMBANGUNAN JARINGAN IRIGASI D.I PIDEKSO DI KABUPATEN WONOGIRI (TAHAP II)</h1>
-    <p>WebGIS Monitoring Progress Map Pekerjaan Saluran Primer DI Pidekso Kiri</p>
+    <h1>WebGIS Monitoring Pembangunan Irigasi D.I. Pidekso – Wonogiri (Tahap II)</h1>
+    <p>Progress & Capaian Pekerjaan Saluran Primer Pidekso Kiri</p>
   </header>
 
   <main>
@@ -175,6 +230,25 @@
           </div>
         </div>
       </section>
+      
+      <!-- ===================== INFORMASI DETAIL PROYEK ===================== -->
+<section class="detail-proyek">
+  <h2>🧭 Informasi Detail Proyek</h2>
+  <div class="detail-grid">
+    <div><strong>Nama Proyek:</strong> Supervisi Pembangunan Jaringan Irigasi D.I Pidekso</div>
+    <div><strong>Lokasi:</strong> Wonogiri, Jawa Tengah</div>
+    <div><strong>Total Panjang:</strong> 5.8 km</div>
+    <div><strong>Kontraktor Pelaksana:</strong> PT Runggu Prima Jaya</div>
+    <div><strong>Konsultan Supervisi:</strong> PT Brahma Seta Indonesia</div>
+    <div><strong>Waktu Pelaksanaan:</strong> Juni 2025 – Desember 2025</div>
+  </div>
+</section>
+<!-- ===================== GALERI DOKUMENTASI ===================== -->
+<section class="galeri-proyek">
+  <h2>📸 Galeri Dokumentasi Lapangan</h2>
+  <p>Lihat dokumentasi lengkap di tautan berikut:</p>
+  <a href="https://drive.google.com/drive/folders/1IVTpK6APvA8BBuNGTl7Ot8qcLPn7UyBe?usp=drive_link" target="_blank" class="galeri-link">📂 Buka Galeri Google Drive</a>
+</section>
     </div>
   </main>
 
