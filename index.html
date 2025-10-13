@@ -47,9 +47,10 @@
     main {
       flex: 1;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       padding: 2rem;
+      gap: 1.5rem;
     }
 
     .map-container {
@@ -68,12 +69,43 @@
       border-radius: var(--radius);
     }
 
+    .info-panel {
+      max-width: 1100px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .info-panel h2 {
+      margin-top: 0;
+      color: var(--secondary);
+    }
+
+    .btn-map {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-map:hover {
+      background: var(--secondary);
+      transform: scale(1.05);
+    }
+
     footer {
       text-align: center;
       background: var(--primary);
       color: #fff;
       font-size: 0.9rem;
       padding: 0.8rem 0;
+      margin-top: 2rem;
     }
 
     /* Responsif */
@@ -84,13 +116,16 @@
       iframe {
         height: 65vh;
       }
+      .info-panel {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>PEMBANGUNAN JARINGAN IRIGASI D.I PIDEKSO DI KABUPATEN WONOGIRI (TAHAP II) </h1>
+    <h1>PEMBANGUNAN JARINGAN IRIGASI D.I PIDEKSO DI KABUPATEN WONOGIRI (TAHAP II)</h1>
     <p>WebGIS Monitoring Progress Map Pekerjaan Saluran Primer DI Pidekso Kiri</p>
   </header>
 
@@ -101,6 +136,26 @@
         allowfullscreen>
       </iframe>
     </div>
+
+    <div class="info-panel">
+      <h2>Tentang WebGIS Ini</h2>
+      <p>
+        WebGIS ini dikembangkan untuk mendukung proses monitoring progres pembangunan 
+        jaringan irigasi D.I Pidekso Kiri di Kabupaten Wonogiri (Tahap II). 
+        Sistem ini menampilkan informasi spasial saluran primer, lokasi pekerjaan, dan infrastruktur 
+        pendukung yang diperbarui secara berkala berdasarkan data survei lapangan dan laporan proyek.
+      </p>
+
+      <p>
+        Melalui peta ini, pengguna dapat memahami sebaran pekerjaan dan kondisi eksisting proyek irigasi 
+        dengan lebih mudah dan interaktif.
+      </p>
+
+      <a href="https://www.google.com/maps/d/u/0/viewer?mid=1yz32l_2OSykfuqjUurEuY77RZVEbZVk" 
+         target="_blank" class="btn-map">
+         🔍 Lihat Peta Penuh
+      </a>
+    </div>
   </main>
 
   <footer>
@@ -108,5 +163,3 @@
   </footer>
 </body>
 </html>
-
-
