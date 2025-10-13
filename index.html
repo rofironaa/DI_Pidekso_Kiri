@@ -68,7 +68,6 @@
       border-radius: var(--radius);
     }
 
-    /* Tambahan: Rekap Progress */
     .rekap-progress {
       margin-top: 1.5rem;
       padding: 1rem 1.2rem;
@@ -116,6 +115,8 @@
     .progress {
       height: 100%;
       background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0;
+      transition: width 1s ease-in-out;
     }
 
     footer {
@@ -126,7 +127,6 @@
       padding: 0.8rem 0;
     }
 
-    /* Responsif */
     @media (max-width: 768px) {
       header h1 {
         font-size: 1.4rem;
@@ -151,24 +151,23 @@
         allowfullscreen>
       </iframe>
 
-      <!-- Tambahan: Rekap Progress -->
       <section class="rekap-progress">
         <h2>📊 Rekap Progress Pekerjaan Saluran</h2>
         <div class="rekap-grid">
           <div class="rekap-item">
             <h3>Total Panjang Saluran</h3>
-            <p><strong>5,8 km</strong></p>
+            <p><strong>5.8 km</strong></p>
           </div>
           <div class="rekap-item">
             <h3>Panjang Selesai</h3>
-            <p><strong>2,4 km</strong></p>
+            <p><strong>2.4 km</strong></p>
           </div>
           <div class="rekap-item">
             <h3>Progress Keseluruhan</h3>
             <div class="progress-bar">
-              <div class="progress" style="width: 79%;"></div>
+              <div class="progress" id="progress-bar"></div>
             </div>
-            <p><strong>41,7%</strong></p>
+            <p><strong id="progress-text">41.7%</strong></p>
           </div>
           <div class="rekap-item">
             <h3>Update Terakhir</h3>
@@ -182,5 +181,14 @@
   <footer>
     © 2025 WebGIS Pidekso — Monitoring Project by Rofi Ronaa
   </footer>
+
+  <script>
+    // Ambil nilai persen dari teks dan ubah progress bar secara otomatis
+    const progressText = document.getElementById('progress-text').innerText;
+    const progressBar = document.getElementById('progress-bar');
+    const percent = parseFloat(progressText.replace('%', '').replace(',', '.'));
+
+    progressBar.style.width = percent + '%';
+  </script>
 </body>
 </html>
