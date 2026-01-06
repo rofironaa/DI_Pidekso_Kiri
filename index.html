@@ -18,7 +18,7 @@
       background-color: #0066cc;
       color: white;
       text-align: center;
-      padding: 25px 15px;
+      padding: 30px 15px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
@@ -29,7 +29,7 @@
     }
 
     .header p {
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: 1rem;
       opacity: 0.9;
     }
@@ -50,15 +50,16 @@
       height: 480px;
       border: none;
       border-radius: 8px;
+      background-color: #e5e3df;
     }
 
-    /* ======== INFO PROYEK ======== */
+    /* ======== INFO PROYEK GRID ======== */
     .info-container {
       width: 90%;
       max-width: 1100px;
       margin: 30px auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
     }
 
@@ -68,17 +69,26 @@
       padding: 15px;
       text-align: left;
       box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+      border-left: 5px solid #0066cc;
+      transition: transform 0.2s;
+    }
+
+    .info-box:hover {
+      transform: translateY(-3px);
     }
 
     .info-box h3 {
       margin: 0;
       color: #0066cc;
-      font-size: 1.05rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .info-box p {
-      margin-top: 8px;
-      font-size: 0.95rem;
+      margin: 8px 0 0 0;
+      font-size: 1.1rem;
+      font-weight: 600;
     }
 
     /* ======== PROGRESS BAR ======== */
@@ -96,13 +106,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
-      font-weight: 600;
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
     .progress-bar {
       width: 100%;
-      height: 16px;
+      height: 20px;
       background-color: #e0e0e0;
       border-radius: 10px;
       overflow: hidden;
@@ -110,99 +120,122 @@
 
     .progress-fill {
       height: 100%;
-      background-color: #0066cc;
+      background: linear-gradient(90deg, #0066cc, #00aaff);
       width: 93.3%;
       border-radius: 10px;
-      transition: width 0.4s ease;
+      transition: width 1s ease-in-out;
     }
 
-    /* ======== GALERI ======== */
-    .galeri-proyek {
+    /* ======== DOKUMEN & GALERI ======== */
+    .section-white {
       width: 90%;
       max-width: 1100px;
       margin: 30px auto;
       background: white;
       border-radius: 10px;
-      padding: 20px;
+      padding: 25px;
       box-shadow: 0 3px 6px rgba(0,0,0,0.05);
       text-align: center;
     }
 
-    .galeri-proyek h2 {
+    .section-white h2 {
+      margin-top: 0;
       color: #333;
+      font-size: 1.4rem;
     }
 
-    .galeri-link {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 20px;
-      background-color: #0066cc;
+    .button-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn-drive {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
       transition: 0.3s;
+      min-width: 200px;
+      justify-content: center;
     }
 
-    .galeri-link:hover {
-      background-color: #004c99;
+    /* Warna Folder Spesifik */
+    .btn-main { background-color: #0066cc; } /* Biru Utama */
+    .btn-report { background-color: #28a745; } /* Hijau Laporan */
+    .btn-drawing { background-color: #ffc107; color: #333; } /* Kuning Gambar */
+    .btn-data { background-color: #17a2b8; } /* Cyan Data */
+
+    .btn-drive:hover {
+      opacity: 0.85;
+      transform: scale(1.02);
     }
 
     /* ======== FOOTER ======== */
     footer {
-      background-color: #0066cc;
+      background-color: #333;
       color: white;
       text-align: center;
-      padding: 15px 10px;
-      font-size: 0.9rem;
-      margin-top: 40px;
+      padding: 20px 10px;
+      font-size: 0.85rem;
+      margin-top: 50px;
+    }
+
+    /* Responsif HP */
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.4rem; }
+      .info-container { grid-template-columns: 1fr; }
+      iframe { height: 300px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
   <header class="header">
-    <h1>WebGIS Monitoring Pembangunan Irigasi D.I. Pidekso – Wonogiri (Tahap II)</h1>
-    <p>Progress & Capaian Pekerjaan Saluran Primer Pidekso Kiri</p>
+    <h1>WebGIS Monitoring Irigasi D.I. Pidekso</h1>
+    <p>Pembangunan Saluran Primer Pidekso Kiri – Wonogiri (Tahap II)</p>
   </header>
 
-  <!-- ===== MAP ===== -->
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1yz32l_2OSykfuqjUurEuY77RZVEbZVk&ehbc=2E312F" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63228.32782747146!2d110.9166!3d-7.9833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a2e3f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sGiriwoyo%2C%20Wonogiri!5e0!3m2!1sid!2sid!4v1234567890" allowfullscreen loading="lazy"></iframe>
   </div>
 
-  <!-- ===== INFO PROYEK ===== -->
   <section class="info-container">
     <div class="info-box">
       <h3>Nama Proyek</h3>
-      <p>Supervisi Pembangunan Jaringan Irigasi D.I Pidekso</p>
-    </div>
-    <div class="info-box">
-      <h3>Lokasi</h3>
-      <p>Kecamatan Giriwoyo, Kabupaten Wonogiri</p>
+      <p>Supervisi Pembangunan Jaringan Irigasi</p>
     </div>
     <div class="info-box">
       <h3>Konsultan</h3>
       <p>PT Brahma Seta Indonesia</p>
     </div>
-    <div class="info-box">
-      <h3>Total Panjang</h3>
-      <p>5.8 km</p>
+    <div class="info-box" style="border-left-color: #28a745;">
+      <h3>Kontraktor Utama</h3>
+      <p>PT. Nama Kontraktor Anda</p>
     </div>
     <div class="info-box">
-      <h3>Panjang Selesai</h3>
-      <p>5.4 km</p>
+      <h3>Lokasi</h3>
+      <p>Giriwoyo, Wonogiri</p>
     </div>
     <div class="info-box">
-      <h3>Status</h3>
-      <p>Sedang Berlangsung</p>
+      <h3>Total Volume</h3>
+      <p>5.800 Meter (5,8 km)</p>
+    </div>
+    <div class="info-box" style="border-left-color: #ffc107;">
+      <h3>Tahun Anggaran</h3>
+      <p>2024 - 2025</p>
     </div>
   </section>
 
-  <!-- ===== PROGRESS BAR ===== -->
   <section class="progress-section">
     <div class="progress-label">
-      <span>Progress Panjang Saluran</span>
+      <span>Realisasi Panjang Saluran (5.4 km / 5.8 km)</span>
       <span>93.3%</span>
     </div>
     <div class="progress-bar">
@@ -210,36 +243,33 @@
     </div>
   </section>
 
-  <!-- ===== GALERI ===== -->
-  <section class="galeri-proyek">
-    <h2>📸 Galeri Dokumentasi Lapangan</h2>
-    <p>Lihat dokumentasi lengkap di tautan berikut:</p>
-    <a href="https://drive.google.com/drive/folders/1IVTpK6APvA8BBuNGTl7Ot8qcLPn7UyBe?usp=drive_link" target="_blank" class="galeri-link">📂 Buka Galeri Google Drive</a>
+  <section class="section-white">
+    <h2>📂 Pusat Data & Dokumen Proyek</h2>
+    <p>Akses seluruh dokumen teknis dan laporan melalui folder Google Drive resmi di bawah ini:</p>
+    
+    <div class="button-group">
+      <a href="https://drive.google.com/drive/folders/1IVTpK6APvA8BBuNGTl7Ot8qcLPn7UyBe" target="_blank" class="btn-drive btn-main">
+        📸 Galeri Dokumentasi (Utama)
+      </a>
+      
+      <a href="https://drive.google.com/drive/folders/1E5_mjoU7SZRzZZBQKDqI17n7eZCmrByS?usp=sharing" target="_blank" class="btn-drive btn-report">
+        📄 Laporan Dokumentasi
+      </a>
+      
+      <a href="https://drive.google.com/drive/folders/1hteImUZKZhNM3cbeToEtjcetUQ8MOQjM?usp=drive_link" target="_blank" class="btn-drive btn-drawing">
+        📐 Laporan Bulanan SPV
+      </a>
+      
+      <a href="https://drive.google.com/drive/folders/15NzMmCB8RVbWTBe0o5KQ8GCcjeLGLrjv?usp=drive_link" target="_blank" class="btn-drive btn-data">
+        📍 Progress Mingguan
+      </a>
+    </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer>
-    © 2025 WebGIS Pidekso — Monitoring Project
+    <p>Monitoring Sistem Informasi Irigasi - D.I. Pidekso Kiri</p>
+    <p>© 2025 – Dikembangkan untuk internal proyek</p>
   </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
